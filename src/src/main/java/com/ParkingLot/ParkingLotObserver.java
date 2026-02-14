@@ -1,5 +1,5 @@
 package com.ParkingLot;
 
 public interface ParkingLotObserver {
-    void notifyFullLot();
+    void notifyFullyLot();
 }

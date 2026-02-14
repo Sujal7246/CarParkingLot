@@ -29,4 +29,13 @@ public class ParkingLotTest {
         lot.park(car);
         assertTrue(owner.isNotified());
     }
+    @Test
+    void shouldNotifyAirportOfficerWhenParkingLotBecomesFull() {
+        ParkingLot lot=new ParkingLot(1);
+        AirportSecurity airportSecurity=new AirportSecurity();
+        lot.registerObserver(airportSecurity);
+        Car car=new Car("PB-13");
+        lot.park(car);
+        assertTrue(airportSecurity.isNotified());
+    }
 }

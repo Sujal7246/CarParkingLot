@@ -37,7 +37,7 @@ public class ParkingLot {
 
     private void notifyObserversLotFull() {
         for (ParkingLotObserver observer : observers) {
-            observer.notifyFullLot();
+            observer.notifyFullyLot();
         }
     }
 
