@@ -20,5 +20,13 @@ public class ParkingLotTest {
         boolean result=lot.unpark(car);
         assertTrue(result);
     }
-
+    @Test
+    void shouldNotifyOwnerWhenParkingLotBecomesFull(){
+        ParkingLot lot=new ParkingLot(1);
+        Owner owner=new Owner();
+        lot.registerObserver(owner);
+        Car car=new Car("PB-13");
+        lot.park(car);
+        assertTrue(owner.isNotified());
+    }
 }
