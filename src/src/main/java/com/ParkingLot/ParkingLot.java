@@ -17,5 +17,13 @@ public class ParkingLot {
         }
         return false;
     }
+    public boolean unpark(Car car) {
+        if (parkedCars.contains(car)) {
+            parkedCars.remove(car);
+            return true;
+        }
+        return false;
+    }
+
 }
 
